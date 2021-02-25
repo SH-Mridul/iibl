@@ -1,0 +1,421 @@
+/*ckEDITOR*/
+.cke_screen_reader_only {
+    position: absolute;
+    clip: rect(1px, 1px, 1px, 1px);
+    padding: 0;
+    border: 0;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    display: none;
+}
+
+/* modal */
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1050;
+    display: none;
+    overflow: hidden;
+    -webkit-overflow-scrolling: touch;
+    outline: 0;
+    filter: blur(0px);
+    opacity: 1;
+
+    /*background-color: #bf6363;*/
+    background-color: rgba(0,0,0,0.5);
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    filter: opacity(1);
+    filter: blur(0px);
+
+    /*filter: grayscale(1) blur(0px);*/
+}
+
+.modal-dialog
+{
+	width: 600px;
+	margin: 30px auto;
+	transition: transform .3s ease-out,-webkit-transform .3s ease-out,-o-transform .3s ease-out;
+}
+
+.modal-content {
+    position: relative;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #999;
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: 6px;
+    -webkit-box-shadow: 1px 2px 4px rgba(0,0,0,.5);
+    box-shadow: 0 3px 9px rgba(0,0,0,.5);
+    outline: 0;
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+    /*box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);*/
+}
+
+.modal-header {
+    padding: 10px 15px;
+    border-bottom: 1px solid #e5e5e5;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    /*background-image: url('../modal/header_bg.png');*/
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    background-color: #394263;
+	color: white;
+}
+.modal-header > div{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.modal-header > div > img
+{
+	margin-right: 5px;
+    width: 24px;
+    height: 20px;
+    object-fit: fill;
+}
+
+.modal-header > div >  h4 {
+	font-size: 12px;
+	font-weight: 600;
+	text-transform: capitalize;
+	letter-spacing: 0.6px;
+	font-weight: normal;
+	margin-top: 2px;
+}
+
+.modal-header > button {
+	font-size: 12px;
+    font-weight: 600;
+    text-transform: capitalize;
+    width: 25px;
+    height: 20px;
+    background-color: red;
+    color: white;
+    border: 1px solid #ddd;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.modal-body {
+	width: 100%;
+	height: calc(100% - 41px);
+	box-sizing: border-box;
+	padding: 10px 15px;
+	padding-bottom: 20px;
+    overflow: auto;
+    position: unset;
+	/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#f9fcf7+0,f5f9f0+100;L+Green+3D */
+	background: rgb(249,252,247); /* Old browsers */
+	background: -moz-linear-gradient(top,  rgba(249,252,247,1) 0%, rgba(245,249,240,1) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  rgba(249,252,247,1) 0%,rgba(245,249,240,1) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  rgba(249,252,247,1) 0%,rgba(245,249,240,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9fcf7', endColorstr='#f5f9f0',GradientType=0 ); /* IE6-9 */
+}
+
+.modal-body > p{
+	font-size: 12px;
+	font-weight: 600;
+	text-transform: none;
+    letter-spacing: 0.5px;
+    margin-bottom: 0px;
+}
+
+.modal-body > div.btnGroup
+{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+.modal-body > div > button {
+	width: 90px;
+    height: 25px;
+    border: 1px solid #ddd;
+    margin-top: 20px;
+    margin-right: 5px;
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: black;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.modal-body > div > button > img {
+	width: 25px;
+    height: 17px;
+    margin-right: 7px;
+    border-right: 1px solid #ddd;
+    padding-right: 7px;
+}
+
+.modal .footer{
+    height: 20px;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    background: rgb(249,252,247); /* Old browsers */
+    background: -moz-linear-gradient(top,  rgba(249,252,247,1) 0%, rgba(245,249,240,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  rgba(249,252,247,1) 0%,rgba(245,249,240,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  rgba(249,252,247,1) 0%,rgba(245,249,240,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9fcf7', endColorstr='#f5f9f0',GradientType=0 ); /* IE6-9 */
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top: -300px; opacity: 0}
+    to {top: 0; opacity: 1}
+}
+
+@keyframes animatetop {
+    from {top: -300px; opacity: 0}
+    to {top: 0; opacity: 1}
+}
+
+button.cancel{
+    background-color: antiquewhite;
+}
+
+button.ok{
+	background-color: #CAF0C1;
+}
+
+
+/*addForm*/
+#addForm{
+
+}
+form{
+    width: 100%;
+}
+
+form > .form-group{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 3px;
+}
+
+form > .form-group.radio{
+    margin-top: 10px;
+}
+
+form > .form-group.button{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+form > .form-group > label{
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: none;
+    position: relative;
+    width: 145px;
+    text-transform: capitalize;
+}
+
+form > .form-group > label:after{
+    content: " : ";
+    position: absolute;
+    right: 5px;
+}
+
+form > .form-group > input{
+    flex: 1;
+    font-size: 12px;
+    border: 1px solid #ddd;
+    padding: 6px 8px;
+    height: 30px;
+}
+
+form > .form-group > select{
+    flex: 1;
+    font-size: 12px;
+    border: 1px solid #ddd;
+    padding: 6px 4px;
+    color: color;    
+}
+
+form > .form-group > div.radio{
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    padding-left: 5px;   
+}
+
+.switch-field {
+    display: flex;
+    margin-bottom: 0px;
+    overflow: hidden;
+    margin-left: 5px;
+}
+
+.switch-field input {
+    position: absolute !important;
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    width: 1px;
+    border: 0;
+    overflow: hidden;
+}
+
+.switch-field label {
+    background-color: #e4e4e4;
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 12px;
+    line-height: 1;
+    text-align: center;
+    padding: 5px 16px;
+    margin-right: -1px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1);
+    transition: all 0.1s ease-in-out;
+}
+
+.switch-field label:hover {
+    cursor: pointer;
+}
+
+.switch-field input:checked + label:not(#radio2) {
+    /*background-color: #a5dc86;*/
+    background-color: green;
+    box-shadow: none;
+    color: white;
+    opacity: 0.75;
+}
+.switch-field input:checked + label:not(#radio1) {
+    background-color: red;
+    box-shadow: none;
+    color: white;
+    opacity: 0.75;
+}
+.switch-field label:first-of-type {
+    border-radius: 4px 0 0 4px;
+}
+
+.switch-field label:last-of-type {
+    border-radius: 0 4px 4px 0;
+}
+
+#radio-two label:active{
+    background-color: red;
+}
+
+
+form > .form-group > div.radio > label{
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: capitalize;
+    margin: 0px 7px;
+}
+
+form > .form-group > textarea{
+    flex: 1;
+    font-size: 12px;
+    border: 1px solid #ddd;
+    padding: 6px 8px;
+    height: 80px;
+}
+
+form > .form-group button{
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: capitalize;
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    margin-left: 5px;
+    background-color: transparent;
+}
+form > .form-group.button div{
+    display: flex;
+    flex-direction: row;
+    margin-left: 5px;
+    background-image: url('../img/modal/btn_bg.png');
+    background-size: contain;
+}
+form > .form-group.button div > img{
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ddd;
+    border-right: 0px;
+    margin-right: -4px;
+    padding: 8px 8px;
+}
+
+.formErrorTxt{
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: capitalize;
+    margin-bottom: 15px;
+    letter-spacing: 0.7px;
+    position: absolute;
+    right: 50px;
+    top: 26px;
+    background: #bd362f;
+    box-shadow: 0 0 5px #c3c3c3;
+    color: white;
+    padding: 8px 10px;
+}
+
+#addForm form > .form-group.flex-column > label{
+    background-color: aquamarine;
+    padding: 8px 10px;
+    width: 100%;
+    margin-bottom: 0px;
+}
+#addForm form > .form-group.flex-column > label:after{
+    content: "";
+}
+
+/*viewForm*/
+#viewForm > dl{
+    display: flex;
+    flex-direction: row;
+    font-size: 12px;
+    margin-bottom: 0px;
+}
+
+#viewForm > dl > dt {
+    font-weight: bold;
+    color: tomato;
+    padding: 5px 10px;
+    position: relative;
+}
+
+#viewForm > dl > dd {
+    font-weight: normal;
+    padding: 5px 10px;
+    position: relative;
+}
+
+#viewForm > dl > dd:before{
+    position: absolute;
+    left: 0px;
+    content: " : ";
+}
